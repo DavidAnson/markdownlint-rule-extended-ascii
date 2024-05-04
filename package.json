@@ -13,7 +13,7 @@
 	"funding": "https://github.com/sponsors/DavidAnson",
 	"exports": "./extended-ascii.mjs",
 	"scripts": {
-		"lint": "markdownlint-cli2 *.md",
+		"lint": "markdownlint-cli2 *.md && eslint --max-warnings 0 *.mjs",
 		"test": "npm run lint"
 	},
 	"files": [
@@ -29,6 +29,8 @@
 		"extended"
 	],
 	"devDependencies": {
+		"@eslint/js": "9.2.0",
+		"eslint": "9.2.0",
 		"markdownlint": "0.34.0",
 		"markdownlint-cli2": "0.13.0"
 	}

@@ -1,6 +1,6 @@
 // @ts-check
 
-const blockedCharacterRe = /[^\x20-\x7e\xa0-\xff]/g;
+const blockedCharacterRe = /[^\x20-\x7e\xa0-\xff]/gu;
 
 /** @type import("markdownlint").Rule */
 export default {
