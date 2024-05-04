@@ -1,0 +1,35 @@
+{
+	"name": "markdownlint-rule-extended-ascii",
+	"version": "0.1.0",
+	"description": "A markdownlint rule that allows only extended ASCII characters",
+	"license": "MIT",
+	"author": "David Anson (https://dlaa.me/)",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DavidAnson/markdownlint-rule-extended-ascii.git"
+	},
+	"homepage": "https://github.com/DavidAnson/markdownlint-rule-extended-ascii",
+	"bugs": "https://github.com/DavidAnson/markdownlint-rule-extended-ascii/issues",
+	"funding": "https://github.com/sponsors/DavidAnson",
+	"exports": "./extended-ascii.mjs",
+	"scripts": {
+		"lint": "markdownlint-cli2 *.md",
+		"test": "npm run lint"
+	},
+	"files": [
+		"package.json",
+		"LICENSE",
+		"README.md",
+		"extended-ascii.mjs"
+	],
+	"keywords": [
+		"markdownlint-rule",
+		"markdownlint",
+		"ascii",
+		"extended"
+	],
+	"devDependencies": {
+		"markdownlint": "0.34.0",
+		"markdownlint-cli2": "0.13.0"
+	}
+}
