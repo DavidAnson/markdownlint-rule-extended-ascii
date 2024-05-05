@@ -14,7 +14,7 @@
 	"exports": "./extended-ascii.mjs",
 	"scripts": {
 		"lint": "markdownlint-cli2 *.md && eslint --max-warnings 0 *.mjs",
-		"test": "npm run lint"
+		"test": "npm run lint && node --test --experimental-test-coverage"
 	},
 	"files": [
 		"package.json",
