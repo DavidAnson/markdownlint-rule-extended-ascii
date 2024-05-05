@@ -1,6 +1,8 @@
 {
 	"config": {
-		"line-length": true
+		"line-length": {
+			"strict": true
+		}
 	},
 	"customRules": [
 		"./extended-ascii.mjs"
