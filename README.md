@@ -44,14 +44,19 @@ If using [`markdownlint-cli2`][markdownlint-cli2] and a
 `.markdownlint-cli2.jsonc` configuration file:
 
 ```json
-...
+{
+    "customRules": [
+        "markdownlint-rule-extended-ascii"
+    ]
+}
 ```
 
 If using [`markdownlint-cli2`][markdownlint-cli2] and a
 `.markdownlint-cli2.yaml` configuration file:
 
 ```yaml
-...
+customRules:
+    - markdownlint-rule-extended-ascii
 ```
 
 If using the [`markdownlint` extension for VS Code][vscode-markdownlint]:
