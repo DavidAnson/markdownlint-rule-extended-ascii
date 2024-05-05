@@ -23,12 +23,12 @@ test("extended ascii violations", async (t) => {
 	assert.deepEqual(
 		messages,
 		[
-			`test/extended-ascii-violations.md:5 extended-ascii Only extended ASCII characters are allowed [Blocked character: '✅']`,
-			`test/extended-ascii-violations.md:7 extended-ascii Only extended ASCII characters are allowed [Blocked character: '“']`,
-			`test/extended-ascii-violations.md:7 extended-ascii Only extended ASCII characters are allowed [Blocked character: '”']`,
-			`test/extended-ascii-violations.md:9 extended-ascii Only extended ASCII characters are allowed [Blocked character: '—']`,
-			`test/extended-ascii-violations.md:11 extended-ascii Only extended ASCII characters are allowed [Blocked character: '８']`,
-			`test/extended-ascii-violations.md:11 extended-ascii Only extended ASCII characters are allowed [Blocked character: '？']`
+			`test/extended-ascii-violations.md:5:4 extended-ascii Only extended ASCII characters are allowed [Blocked character: '✅']`,
+			`test/extended-ascii-violations.md:7:6 extended-ascii Only extended ASCII characters are allowed [Blocked character: '“']`,
+			`test/extended-ascii-violations.md:7:12 extended-ascii Only extended ASCII characters are allowed [Blocked character: '”']`,
+			`test/extended-ascii-violations.md:9:15 extended-ascii Only extended ASCII characters are allowed [Blocked character: '—']`,
+			`test/extended-ascii-violations.md:11:11 extended-ascii Only extended ASCII characters are allowed [Blocked character: '８']`,
+			`test/extended-ascii-violations.md:11:17 extended-ascii Only extended ASCII characters are allowed [Blocked character: '？']`
 		]
 	);
 });

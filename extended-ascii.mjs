@@ -10,11 +10,12 @@ export default {
 	"parser": "none",
 	"function": (params, onError) => {
 		params.lines.forEach((line, index) => {
-			const violations = line.match(blockedCharacterRe) || [];
+			const violations = line.matchAll(blockedCharacterRe);
 			for (const violation of violations) {
 				onError({
 					"lineNumber": index + 1,
-					"detail": `Blocked character: '${violation}'`
+					"detail": `Blocked character: '${violation[0]}'`,
+					"range": [ violation.index + 1, 1 ]
 				});
 			}
 		});
