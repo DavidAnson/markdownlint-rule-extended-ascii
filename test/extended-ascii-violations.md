@@ -1,6 +1,8 @@
 # Extended ASCII Violations
 
-Allowed text
+Plain text
+
+Äccented çharacters
 
 An ✅ emoji
 
