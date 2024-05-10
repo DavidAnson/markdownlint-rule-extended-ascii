@@ -10,6 +10,8 @@ export default [
 		},
 		"rules": {
 			"no-magic-numbers": "off",
+			"no-ternary": "off",
+			"one-var": "off",
 			"sort-keys": "off"
 		}
 	}

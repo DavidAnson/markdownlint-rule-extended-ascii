@@ -1,6 +1,7 @@
 // @ts-check
 
-const blockedCharacterRe = /[^\x20-\x7e\xa0-\xff]/gu;
+const blockedAsciiRe = /[^\x20-\x7e]/gu;
+const blockedExtendedAsciiRe = /[^\x20-\x7e\xa0-\xff]/gu;
 
 /** @type import("markdownlint").Rule */
 export default {
@@ -9,6 +10,9 @@ export default {
 	"tags": [ "davidanson" ],
 	"parser": "none",
 	"function": (params, onError) => {
+		const blockedCharacterRe = params.config["ascii-only"] ?
+			blockedAsciiRe :
+			blockedExtendedAsciiRe;
 		params.lines.forEach((line, index) => {
 			const violations = line.matchAll(blockedCharacterRe);
 			for (const violation of violations) {
