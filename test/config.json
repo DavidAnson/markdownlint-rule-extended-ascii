@@ -1,0 +1,7 @@
+{
+	"extended-ascii": {
+		"ascii-only": true
+	},
+
+	"some-other-rule": false
+}
