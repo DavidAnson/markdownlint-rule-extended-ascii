@@ -70,7 +70,7 @@ documentation*
 ### Customize
 
 If using a JSON [`markdownlint` configuration object][markdownlint-config]
-object to set the `ascii-only` parameter:
+to set the `ascii-only` parameter:
 
 ```json
 {

@@ -1,4 +1,6 @@
 IEC
+JSON
 markdownlint
 markdownlint-rule-extended-ascii
 README
+YAML
