@@ -2,7 +2,7 @@
 
 import assert from "node:assert";
 import test from "node:test";
-import extendedAscii from "../extended-ascii.mjs";
+import extendedAscii from "../extended-ascii.cjs";
 import { main as cli2 } from "markdownlint-cli2";
 import markdownlint from "markdownlint-cli2/markdownlint";
 const { promises } = markdownlint;
@@ -30,7 +30,7 @@ const paramsBase = {
 	}
 };
 
-test("extended ascii violations", async (t) => {
+test("extended ascii violations", async () => {
 	const messages = [];
 	const params = {
 		...paramsBase,
@@ -40,7 +40,7 @@ test("extended ascii violations", async (t) => {
 	assert.deepEqual(messages, extendedAsciiViolations);
 });
 
-test("ascii-only violations, JSON configuration", async (t) => {
+test("ascii-only violations, JSON configuration", async () => {
 	const messages = [];
 	const params = {
 		...paramsBase,
@@ -54,7 +54,7 @@ test("ascii-only violations, JSON configuration", async (t) => {
 	assert.deepEqual(messages, [ ...asciiViolations, ...extendedAsciiViolations ]);
 });
 
-test("ascii-only violations, YAML configuration", async (t) => {
+test("ascii-only violations, YAML configuration", async () => {
 	const messages = [];
 	const params = {
 		...paramsBase,
@@ -68,7 +68,7 @@ test("ascii-only violations, YAML configuration", async (t) => {
 	assert.deepEqual(messages, [ ...asciiViolations, ...extendedAsciiViolations ]);
 });
 
-test("no issues in project files", async (t) => {
+test("no issues in project files", async () => {
 	const params = {
 		"argv": [ "*.md" ]
 	}

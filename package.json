@@ -11,16 +11,16 @@
 	"homepage": "https://github.com/DavidAnson/markdownlint-rule-extended-ascii",
 	"bugs": "https://github.com/DavidAnson/markdownlint-rule-extended-ascii/issues",
 	"funding": "https://github.com/sponsors/DavidAnson",
-	"exports": "./extended-ascii.mjs",
+	"exports": "./extended-ascii.cjs",
 	"scripts": {
-		"lint": "markdownlint-cli2 *.md && eslint --max-warnings 0 *.mjs",
+		"lint": "markdownlint-cli2 *.md && eslint --max-warnings 0",
 		"test": "npm run lint && node --test --experimental-test-coverage"
 	},
 	"files": [
 		"package.json",
 		"LICENSE",
 		"README.md",
-		"extended-ascii.mjs"
+		"extended-ascii.cjs"
 	],
 	"keywords": [
 		"markdownlint-rule",

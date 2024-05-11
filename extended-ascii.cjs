@@ -1,10 +1,12 @@
 // @ts-check
 
+"use strict";
+
 const blockedAsciiRe = /[^\x20-\x7e]/gu;
 const blockedExtendedAsciiRe = /[^\x20-\x7e\xa0-\xff]/gu;
 
 /** @type import("markdownlint").Rule */
-export default {
+module.exports = {
 	"names": [ "extended-ascii" ],
 	"description": "Only extended ASCII characters are allowed",
 	"tags": [ "davidanson" ],

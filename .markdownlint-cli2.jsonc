@@ -8,6 +8,6 @@
 		}
 	},
 	"customRules": [
-		"./extended-ascii.mjs"
+		"./extended-ascii.cjs"
 	]
 }

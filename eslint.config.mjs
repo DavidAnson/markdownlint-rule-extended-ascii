@@ -12,6 +12,7 @@ export default [
 			"no-magic-numbers": "off",
 			"no-ternary": "off",
 			"one-var": "off",
+			"sort-imports": "off",
 			"sort-keys": "off"
 		}
 	}
