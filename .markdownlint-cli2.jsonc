@@ -1,5 +1,8 @@
 {
 	"config": {
+		"extended-ascii": {
+			"ascii-only": true
+		},
 		"line-length": {
 			"strict": true
 		}
