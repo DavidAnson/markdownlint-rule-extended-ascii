@@ -40,33 +40,22 @@ test("extended ascii violations", async () => {
 	assert.deepEqual(messages, extendedAsciiViolations);
 });
 
-test("ascii-only violations, JSON configuration", async () => {
-	const messages = [];
-	const params = {
-		...paramsBase,
-		"logError": (message) => messages.push(message),
-		"optionsOverride": {
-			...paramsBase.optionsOverride,
-			"config": await readConfig("./test/config.json", [ jsoncParse ])
+const getAsciiOnlyTest = (config, parser) =>
+	async () => {
+		const messages = [];
+		const params = {
+			...paramsBase,
+			"logError": (message) => messages.push(message),
+			"optionsOverride": {
+				...paramsBase.optionsOverride,
+				"config": await readConfig(config, [ parser ])
+			}
 		}
-	}
-	assert.equal(await cli2(params), 1);
-	assert.deepEqual(messages, [ ...asciiViolations, ...extendedAsciiViolations ]);
-});
-
-test("ascii-only violations, YAML configuration", async () => {
-	const messages = [];
-	const params = {
-		...paramsBase,
-		"logError": (message) => messages.push(message),
-		"optionsOverride": {
-			...paramsBase.optionsOverride,
-			"config": await readConfig("./test/config.yaml", [ yamlParse ])
-		}
-	}
-	assert.equal(await cli2(params), 1);
-	assert.deepEqual(messages, [ ...asciiViolations, ...extendedAsciiViolations ]);
-});
+		assert.equal(await cli2(params), 1);
+		assert.deepEqual(messages, [ ...asciiViolations, ...extendedAsciiViolations ]);
+	};
+test("ascii-only violations, JSON configuration", getAsciiOnlyTest("./test/config.json", jsoncParse));
+test("ascii-only violations, YAML configuration", getAsciiOnlyTest("./test/config.yaml", yamlParse));
 
 test("no issues in project files", async () => {
 	const params = {
