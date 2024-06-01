@@ -30,7 +30,7 @@
 		"lint"
 	],
 	"devDependencies": {
-		"@eslint/js": "9.3.0",
+		"@eslint/js": "9.4.0",
 		"eslint": "9.4.0",
 		"markdownlint": "0.34.0",
 		"markdownlint-cli2": "0.13.0"
