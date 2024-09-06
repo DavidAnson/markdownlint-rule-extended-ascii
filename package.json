@@ -33,6 +33,6 @@
 		"@eslint/js": "9.9.1",
 		"eslint": "9.9.1",
 		"markdownlint": "0.35.0",
-		"markdownlint-cli2": "0.13.0"
+		"markdownlint-cli2": "0.14.0"
 	}
 }
