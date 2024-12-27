@@ -4,9 +4,7 @@ import assert from "node:assert";
 import test from "node:test";
 import extendedAscii from "../extended-ascii.cjs";
 import { main as cli2 } from "markdownlint-cli2";
-import markdownlint from "markdownlint-cli2/markdownlint";
-const { promises } = markdownlint;
-const { readConfig } = promises;
+import { readConfig } from "markdownlint-cli2/markdownlint/promise";
 import jsoncParse from "markdownlint-cli2/parsers/jsonc";
 import yamlParse from "markdownlint-cli2/parsers/yaml";
 
