@@ -4,7 +4,8 @@ import assert from "node:assert";
 import test from "node:test";
 import extendedAscii from "../extended-ascii.cjs";
 import { main as cli2 } from "markdownlint-cli2";
-import { readConfig } from "markdownlint-cli2/markdownlint/promise";
+import { applyFixes } from "markdownlint-cli2/markdownlint";
+import { lint, readConfig } from "markdownlint-cli2/markdownlint/promise";
 import jsoncParse from "markdownlint-cli2/parsers/jsonc";
 import yamlParse from "markdownlint-cli2/parsers/yaml";
 
@@ -20,11 +21,12 @@ const extendedAsciiViolations = [
 	"extended-ascii-violations.md:13:11 extended-ascii Only extended ASCII characters are allowed [Blocked character: '８']",
 	"extended-ascii-violations.md:13:17 extended-ascii Only extended ASCII characters are allowed [Blocked character: '？']"
 ];
+const customRules = [ extendedAscii ];
 const paramsBase = {
 	"argv": [ "extended-ascii-violations.md" ],
 	"directory": "test",
 	"optionsOverride": {
-		"customRules": [ extendedAscii ]
+		customRules
 	}
 };
 
@@ -54,6 +56,17 @@ const getAsciiOnlyTest = (config, parser) =>
 	};
 test("ascii-only violations, JSON configuration", getAsciiOnlyTest("./test/config.json", jsoncParse));
 test("ascii-only violations, YAML configuration", getAsciiOnlyTest("./test/config.yaml", yamlParse));
+
+test("fixes for smart quotes and em dash", async () => {
+	const content = `Text “double” ‘single’ — dash.\n`;
+	const expected = `Text "double" 'single' - dash.\n`;
+	const results = await lint({
+		"strings": { content },
+		customRules
+	});
+	const actual = applyFixes(content, results.content);
+	assert.equal(actual, expected);
+});
 
 test("no issues in project files", async () => {
 	const params = {

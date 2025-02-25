@@ -20,12 +20,15 @@ text as found in most README files, documentation, source code, and so on.
 This rule will not be interesting to some people because it blocks the use of
 [emoji][emoji] as well as characters commonly used across Asia. However, it
 meaningfully prevents the accidental use of so-called
-[smart-quotes][smart-quotes], inconsistent [em-dashes][em-dash], ambiguous
+[smart quotes][smart-quotes], inconsistent [em dashes][em-dash], ambiguous
 [full-width characters][full-width], and the like.
 
 To restrict things further and limit Markdown content to just the printable
 character codes less than 128 (i.e., plain [ASCII][ascii]), set the rule's
 `ascii-only` parameter to `true`.
+
+This rule provides fix information for smart quote and em dash violations which
+can be used by callers to fix such instances automatically.
 
 ## Use
 
