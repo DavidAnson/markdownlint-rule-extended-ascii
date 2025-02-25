@@ -57,9 +57,9 @@ const getAsciiOnlyTest = (config, parser) =>
 test("ascii-only violations, JSON configuration", getAsciiOnlyTest("./test/config.json", jsoncParse));
 test("ascii-only violations, YAML configuration", getAsciiOnlyTest("./test/config.yaml", yamlParse));
 
-test("fixes for smart quotes and em dash", async () => {
-	const content = `Text “double” ‘single’ — dash.\n`;
-	const expected = `Text "double" 'single' - dash.\n`;
+test("fixes for smart quotes and en/em dashes", async () => {
+	const content = `Text “double” ‘single’ en–dash em—dash.\n`;
+	const expected = `Text "double" 'single' en-dash em-dash.\n`;
 	const results = await lint({
 		"strings": { content },
 		customRules
