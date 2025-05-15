@@ -32,6 +32,6 @@
 	"devDependencies": {
 		"@eslint/js": "9.26.0",
 		"eslint": "9.26.0",
-		"markdownlint-cli2": "0.18.0"
+		"markdownlint-cli2": "0.18.1"
 	}
 }
