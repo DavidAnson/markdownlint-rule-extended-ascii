@@ -14,7 +14,7 @@
 	"exports": "./extended-ascii.cjs",
 	"scripts": {
 		"lint": "markdownlint-cli2 *.md && eslint --max-warnings 0",
-		"test": "npm run lint && node --test --experimental-test-coverage"
+		"test": "npm run lint && node --test --experimental-test-coverage --test-coverage-branches=100 --test-coverage-functions=100 --test-coverage-lines=100"
 	},
 	"files": [
 		"package.json",
