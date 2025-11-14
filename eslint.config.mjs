@@ -9,6 +9,7 @@ export default [
 			"reportUnusedDisableDirectives": true
 		},
 		"rules": {
+			"no-inline-comments": [ "error", { "ignorePattern": " @type \\{.+\\} " } ],
 			"no-magic-numbers": "off",
 			"no-ternary": "off",
 			"no-undefined": "off",

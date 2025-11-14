@@ -10,16 +10,16 @@ import jsoncParse from "markdownlint-cli2/parsers/jsonc";
 import yamlParse from "markdownlint-cli2/parsers/yaml";
 
 const asciiViolations = [
-	"extended-ascii-violations.md:5:1 extended-ascii Only extended ASCII characters are allowed [Blocked character: 'Ä']",
-	"extended-ascii-violations.md:5:10 extended-ascii Only extended ASCII characters are allowed [Blocked character: 'ç']"
+	"extended-ascii-violations.md:5:1 error extended-ascii Only extended ASCII characters are allowed [Blocked character: 'Ä']",
+	"extended-ascii-violations.md:5:10 error extended-ascii Only extended ASCII characters are allowed [Blocked character: 'ç']"
 ];
 const extendedAsciiViolations = [
-	"extended-ascii-violations.md:7:4 extended-ascii Only extended ASCII characters are allowed [Blocked character: '✅']",
-	"extended-ascii-violations.md:9:6 extended-ascii Only extended ASCII characters are allowed [Blocked character: '“']",
-	"extended-ascii-violations.md:9:12 extended-ascii Only extended ASCII characters are allowed [Blocked character: '”']",
-	"extended-ascii-violations.md:11:15 extended-ascii Only extended ASCII characters are allowed [Blocked character: '—']",
-	"extended-ascii-violations.md:13:11 extended-ascii Only extended ASCII characters are allowed [Blocked character: '８']",
-	"extended-ascii-violations.md:13:17 extended-ascii Only extended ASCII characters are allowed [Blocked character: '？']"
+	"extended-ascii-violations.md:7:4 error extended-ascii Only extended ASCII characters are allowed [Blocked character: '✅']",
+	"extended-ascii-violations.md:9:6 error extended-ascii Only extended ASCII characters are allowed [Blocked character: '“']",
+	"extended-ascii-violations.md:9:12 error extended-ascii Only extended ASCII characters are allowed [Blocked character: '”']",
+	"extended-ascii-violations.md:11:15 error extended-ascii Only extended ASCII characters are allowed [Blocked character: '—']",
+	"extended-ascii-violations.md:13:11 error extended-ascii Only extended ASCII characters are allowed [Blocked character: '８']",
+	"extended-ascii-violations.md:13:17 error extended-ascii Only extended ASCII characters are allowed [Blocked character: '？']"
 ];
 const customRules = [ extendedAscii ];
 const paramsBase = {
@@ -31,21 +31,23 @@ const paramsBase = {
 };
 
 test("extended ascii violations", async () => {
+	/** @type {string[]} */
 	const messages = [];
 	const params = {
 		...paramsBase,
-		"logError": (message) => messages.push(message)
+		"logError": (/** @type {string} */ message) => messages.push(message)
 	}
 	assert.equal(await cli2(params), 1);
 	assert.deepEqual(messages, extendedAsciiViolations);
 });
 
-const getAsciiOnlyTest = (config, parser) =>
+const getAsciiOnlyTest = (/** @type {string} */ config, /** @type {import("markdownlint-cli2/markdownlint").ConfigurationParser} */ parser) =>
 	async () => {
+		/** @type {string[]} */
 		const messages = [];
 		const params = {
 			...paramsBase,
-			"logError": (message) => messages.push(message),
+			"logError": (/** @type {string} */ message) => messages.push(message),
 			"optionsOverride": {
 				...paramsBase.optionsOverride,
 				"config": await readConfig(config, [ parser ])
