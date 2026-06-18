@@ -12,7 +12,7 @@ jobs:
   check-links:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: JustinBeckwith/linkinator-action@v2
       with:
         paths: '*.md'
@@ -20,7 +20,7 @@ jobs:
   check-spelling:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: tbroadley/spellchecker-cli-action@v1
       with:
         dictionaries: '.github/dictionary.txt'
@@ -29,7 +29,7 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: actions/setup-node@v6
       with:
         node-version: current
