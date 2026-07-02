@@ -94,18 +94,18 @@ extended-ascii:
 some-other-rule: false
 ```
 
-[8859-1]: https://en.wikipedia.org/wiki/ISO/IEC_8859-1
-[ascii]: https://en.wikipedia.org/wiki/ASCII
-[basic-latin]: https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)
-[en-em-dash]: https://en.wikipedia.org/wiki/Dash
-[emoji]: https://en.wikipedia.org/wiki/Emoji
-[extended-ascii]: https://en.wikipedia.org/wiki/Extended_ASCII
-[full-width]: https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms
-[latin-1]: https://en.wikipedia.org/wiki/Latin-1_Supplement
-[markdown]: https://en.wikipedia.org/wiki/Markdown
+[8859-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
+[ascii]: https://wikipedia.org/wiki/ASCII
+[basic-latin]: https://wikipedia.org/wiki/Basic_Latin_(Unicode_block)
+[en-em-dash]: https://wikipedia.org/wiki/Dash
+[emoji]: https://wikipedia.org/wiki/Emoji
+[extended-ascii]: https://wikipedia.org/wiki/Extended_ASCII
+[full-width]: https://wikipedia.org/wiki/Halfwidth_and_fullwidth_forms
+[latin-1]: https://wikipedia.org/wiki/Latin-1_Supplement
+[markdown]: https://wikipedia.org/wiki/Markdown
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [markdownlint-cli]: https://github.com/igorshubovych/markdownlint-cli
 [markdownlint-cli2]: https://github.com/DavidAnson/markdownlint-cli2
 [markdownlint-config]: https://github.com/DavidAnson/markdownlint?tab=readme-ov-file#optionsconfig
-[smart-quotes]: https://en.wikipedia.org/wiki/Quotation_marks_in_English#Smart_quotes
+[smart-quotes]: https://wikipedia.org/wiki/Quotation_marks_in_English#Smart_quotes
 [vscode-markdownlint]: https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint

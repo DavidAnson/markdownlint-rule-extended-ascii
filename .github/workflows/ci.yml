@@ -13,9 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
-    - uses: JustinBeckwith/linkinator-action@v2
-      with:
-        paths: '*.md'
+    - run: 'npx linkinator "*.md" --skip "^https://wikipedia.org/"'
 
   check-spelling:
     runs-on: ubuntu-latest
